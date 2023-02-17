@@ -1,0 +1,3 @@
+# VS Code Project Template For Zephyr Projects
+
+This project is a template that we use to work on Zephyr-based projects.
