@@ -1,0 +1,102 @@
+{
+    "version": 2,
+    "configurePresets": [
+        {
+            "name": "zephyr_base",
+            "hidden": true,
+            "description": "Common preset for zephyr app",
+            "generator": "Ninja",
+            "binaryDir": "${sourceDir}/build/${presetName}",
+            "cacheVariables": {
+                "BOARD": "native_posix_64",
+                "CONFIG_STACK_USAGE": "y"
+            },
+            "environment": {
+                "ZEPHYR_BASE": "${sourceDir}/zephyr",
+                "NINJA_STATUS": "[%f/%t %o/%e] "
+            }
+        },
+        {
+            "name": "zephyr_release",
+            "inherits": [
+                "zephyr_base"
+            ],
+            "hidden": true,
+            "description": "Common preset for zephyr app in release configuration",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "MinSizeRel"
+            }
+        },
+        {
+            "name": "zephyr_debug",
+            "inherits": [
+                "zephyr_base"
+            ],
+            "hidden": true,
+            "description": "Common preset for zephyr app with optimized debugging experience",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug",
+                "CONFIG_NO_OPTIMIZATIONS": null,
+                "CONFIG_SIZE_OPTIMIZATIONS": null,
+                "CONFIG_SPEED_OPTIMIZATIONS": null,
+                "CONFIG_DEBUG_OPTIMIZATIONS": "y",
+                "CONFIG_DEBUG": "y",
+                "CONFIG_DEBUG_INFO": "y",
+                "CONFIG_DEBUG_THREAD_INFO": "y",
+                "CONFIG_ASSERT": "y"
+            }
+        },
+        {
+            "name": "app_release",
+            "inherits": [
+                "zephyr_release"
+            ],
+            "displayName": "App (Release)",
+            "cacheVariables": {
+                "APP_DIR": "app"
+            }
+        },
+        {
+            "name": "app_debug",
+            "inherits": [
+                "zephyr_debug"
+            ],
+            "displayName": "App (Debug)",
+            "cacheVariables": {
+                "APP_DIR": "app"
+            }
+        },
+        {
+            "name": "app_test_posix64_debug",
+            "inherits": [
+                "zephyr_debug"
+            ],
+            "displayName": "App Tests (Debug)",
+            "cacheVariables": {
+                "CMAKE_PREFIX_PATH": "${sourceDir}/conan-find/x86_64-linux-gcc12",
+                "APP_DIR": "app_tests"
+            },
+            "environment": {
+                "EXTRA_CXXFLAGS": "-D_GLIBCXX_DEBUG -DCONFIG_ENFORCE_ZEPHYR_STDINT",
+                "CLAGS": "-DCONFIG_ENFORCE_ZEPHYR_STDINT"
+            }
+        }
+    ],
+    "buildPresets": [
+        {
+            "name": "app_release",
+            "configurePreset": "app_release"
+        },
+        {
+            "name": "app_debug",
+            "configurePreset": "app_debug"
+        },
+        {
+            "name": "app_test_posix64_debug",
+            "configurePreset": "app_test_posix64_debug",
+            "targets": [
+                "run_tests"
+            ]
+        }
+    ]
+}

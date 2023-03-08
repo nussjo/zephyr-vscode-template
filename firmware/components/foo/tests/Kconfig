@@ -1,0 +1,3 @@
+config FOO_COMPONENT_TESTS
+    bool "Enable Foo component tests"
+    depends on APP_GTEST && FOO_COMPONENT

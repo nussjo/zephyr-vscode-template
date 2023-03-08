@@ -1,0 +1,13 @@
+# This Kconfig file is picked by the Zephyr build system because it is defined
+# as the module Kconfig entry point (see zephyr/module.yml). You can browse
+# module options by going to Zephyr -> Modules in Kconfig.
+
+rsource "components/Kconfig"
+rsource "targets/app/src/Kconfig"
+rsource "targets/app_tests/src/Kconfig"
+
+config APP_GTEST
+    bool "GoogleTest support"
+    depends on CPLUSPLUS && BOARD_NATIVE_POSIX
+    help
+      This option enables GoogleTest support in the application.

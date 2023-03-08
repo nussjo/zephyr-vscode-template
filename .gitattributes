@@ -1,0 +1,4 @@
+# Auto detect text files, convert to LF when checkin to object database and when checkout to working directory
+* text=auto eol=lf
+
+*.elf binary

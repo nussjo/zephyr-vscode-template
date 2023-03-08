@@ -1,0 +1,4 @@
+rsource "tests/Kconfig"
+
+config FOO_COMPONENT
+    bool "Enable the Foo component"

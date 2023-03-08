@@ -1,0 +1,151 @@
+{
+    "folders": [
+        {
+            "path": "zephyr"
+        },
+        // have this last
+        {
+            "path": ".",
+            "name": "root"
+        }
+    ],
+    "settings": {
+        "C_Cpp.autoAddFileAssociations": false,
+        "cmake.allowCommentsInPresetsFile": false,
+        "cmake.autoSelectActiveFolder": false,
+        "cmake.configureOnOpen": false,
+        "cmake.copyCompileCommands": "${workspaceFolder:root}/build/compile_commands.json",
+        "cmake.ignoreCMakeListsMissing": true,
+        "cmake.statusbar.advanced": {
+            "build": {
+                "visibility": "default"
+            },
+            "configurePreset": {
+                "visibility": "default"
+            },
+            "launchTarget": {
+                "visibility": "default"
+            },
+            "workspace": {
+                "visibility": "default"
+            }
+        },
+        "cmake.statusbar.visibility": "hidden",
+        "cmake.useCMakePresets": "always",
+        "cortex-debug.variableUseNaturalFormat": true,
+        "debug.showInStatusBar": "always",
+        "editor.formatOnSave": true,
+        "editor.renderWhitespace": "all",
+        "files.insertFinalNewline": true,
+        "files.trimTrailingWhitespace": true,
+        "plantuml.jar": "/home/crocodile/plantuml.jar",
+        "tasks.statusbar.default.hide": true,
+        "testMate.cpp.debug.configTemplate": {
+            "type": "${assert:testMate.cpp.debug.configTemplate doesn't support this platform!}",
+            "linux": {
+                "type": "cppdbg",
+                "MIMode": "gdb"
+            },
+            "program": "${exec}",
+            "args": "${argsArray}",
+            "cwd": "${cwd}",
+            "externalConsole": false
+        },
+        "testMate.cpp.test.advancedExecutables": [
+            {
+                "pattern": "**/{build}/**/tests/**/*{test,Test,TEST,tests,Tests,TESTS}",
+                "gtest": {
+                    "debug.enableOutputColouring": true
+                },
+                "sourceFileMap": {
+                    "WEST_TOPDIR/": "${workspaceFolder}/"
+                }
+            },
+            {
+                "pattern": "build/**/zephyr.elf",
+                "gtest": {
+                    "debug.enableOutputColouring": true,
+                    "prependTestRunningArgs": [
+                        "-testargs"
+                    ]
+                },
+                "sourceFileMap": {
+                    "WEST_TOPDIR/": "${workspaceFolder}/"
+                },
+                "executionWrapper": {
+                    "path": "/bin/bash",
+                    "args": [
+                        "-c",
+                        "${cmd} -testargs ${argsStr}"
+                    ]
+                }
+            }
+        ]
+    },
+    "tasks": {
+        "version": "2.0.0",
+        "problemMatcher": [],
+        "tasks": [
+            {
+                "label": "init",
+                "detail": "Run west init",
+                "type": "shell",
+                "command": "west init --local firmware",
+                "options": {
+                    "cwd": "${workspaceFolder:root}",
+                    "statusbar": {
+                        "hide": false
+                    }
+                }
+            },
+            {
+                "label": "update",
+                "detail": "Run west update",
+                "type": "shell",
+                "command": "west update",
+                "options": {
+                    "cwd": "${workspaceFolder:root}",
+                    "statusbar": {
+                        "hide": false
+                    }
+                }
+            },
+            {
+                "label": "deps",
+                "detail": "Register zephyr CMake package and install python requirements",
+                "type": "shell",
+                "command": "west zephyr-export && python -m pip install -r zephyr/scripts/requirements.txt",
+                "options": {
+                    "cwd": "${workspaceFolder:root}",
+                    "statusbar": {
+                        "hide": false
+                    }
+                }
+            },
+            {
+                "label": "clean",
+                "detail": "Remove west build folder",
+                "type": "shell",
+                "command": "rm -rf build",
+                "options": {
+                    "cwd": "${workspaceFolder:root}",
+                    "statusbar": {
+                        "hide": false
+                    }
+                }
+            },
+            {
+                "label": "conan install",
+                "detail": "Install IMU conan packages",
+                "type": "shell",
+                "command": "scripts/conan-install.sh",
+                "options": {
+                    "cwd": "${workspaceFolder:root}",
+                    "statusbar": {
+                        "hide": false
+                    }
+                }
+            }
+        ]
+    }
+}

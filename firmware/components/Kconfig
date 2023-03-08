@@ -1,0 +1,5 @@
+menu "Components"
+
+rsource "foo/Kconfig"
+
+endmenu

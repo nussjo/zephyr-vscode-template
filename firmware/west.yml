@@ -1,0 +1,11 @@
+manifest:
+  remotes: # short names for project URLs
+    - name: zephyr-project
+      url-base: git@github.com:zephyrproject-rtos
+  projects: # a list of projects managed by west
+    - name: zephyr
+      remote: zephyr-project
+      revision: zephyr-v3.0.0
+      west-commands: scripts/west-commands.yml
+  self: # configuration related to the manifest repository itself, i.e. the repository containing west.yml
+    path: zephyr-vscode-template
