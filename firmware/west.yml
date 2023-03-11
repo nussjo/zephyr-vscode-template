@@ -1,7 +1,7 @@
 manifest:
   remotes: # short names for project URLs
     - name: zephyr-project
-      url-base: git@github.com:zephyrproject-rtos
+      url-base: https://github.com/zephyrproject-rtos
   projects: # a list of projects managed by west
     - name: zephyr
       remote: zephyr-project
