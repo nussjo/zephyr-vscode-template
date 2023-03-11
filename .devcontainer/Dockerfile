@@ -74,4 +74,4 @@ ENV PATH "/home/zephyr/.local/bin:$PATH"
 
 WORKDIR /home/zephyr
 
-RUN wget -L -O plantuml.jar https://artifactory.hexagon.com/artifactory/gsurv-thirdparty-generic-release-local/plantuml/1.2022.13/plantuml-1.2022.13.jar
+RUN wget -L -O plantuml.jar https://github.com/plantuml/plantuml/releases/download/v1.2023.4/plantuml-1.2023.4.jar
