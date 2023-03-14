@@ -1,8 +1,7 @@
-cmake_minimum_required(VERSION 3.20.0)
-
-find_package(Zephyr REQUIRED HINTS $ENV{ZEPHYR_BASE})
+cmake_minimum_required(VERSION 3.25.0)
 project(AppTests)
 
+find_package(Zephyr REQUIRED HINTS $ENV{ZEPHYR_BASE})
 find_package(GTest REQUIRED)
 
 target_sources(app
@@ -12,7 +11,7 @@ target_sources(app
 
 target_link_libraries(app
     PRIVATE
-        Components::Foo
+        $<$<BOOL:${CONFIG_FOO_COMPONENT_TESTS}>:Components::Foo>
         GTest::gtest
         GTest::gmock
 )

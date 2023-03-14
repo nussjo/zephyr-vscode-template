@@ -12,12 +12,12 @@ void main()
     // <path> [<gtest_arg1> <gtest_arg2>]
     //
     int argcAll = 0;
-    char** argvAll = nullptr;
+    char **argvAll = nullptr;
     native_get_cmd_line_args(&argcAll, &argvAll);
     if (argcAll > 0 && argvAll)
     {
         int argcTest = 0;
-        char** argvTest = nullptr;
+        char **argvTest = nullptr;
         native_get_test_cmd_line_args(&argcTest, &argvTest);
         ++argcTest;
         if (argcTest == 1)

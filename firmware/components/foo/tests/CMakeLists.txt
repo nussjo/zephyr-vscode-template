@@ -1,6 +1,6 @@
-cmake_minimum_required(VERSION 3.20.0)
-
+cmake_minimum_required(VERSION 3.25.0)
 project(FooTests)
+
 add_library(${PROJECT_NAME} OBJECT)
 add_library(Components::${PROJECT_NAME} ALIAS ${PROJECT_NAME})
 
@@ -8,7 +8,6 @@ find_package(GTest REQUIRED)
 
 target_link_libraries(${PROJECT_NAME}
     PRIVATE
-        zephyr_interface
         Components::Foo
         GTest::gtest
         GTest::gmock

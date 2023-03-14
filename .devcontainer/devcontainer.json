@@ -16,16 +16,10 @@
             "extensions": [
                 "ms-vscode.cpptools",
                 "ms-vscode.cmake-tools",
-                "ms-dotnettools.csharp",
-                "formulahendry.dotnet-test-explorer",
                 "matepek.vscode-catch2-test-adapter",
-                "nordic-semiconductor.nrf-devicetree",
-                "nordic-semiconductor.nrf-kconfig",
-                "marus25.cortex-debug",
                 "actboy168.tasks",
                 "eamodio.gitlens",
                 "twxs.cmake",
-                "zixuanwang.linkerscript",
                 "asciidoctor.asciidoctor-vscode",
                 "jebbs.plantuml"
             ]
