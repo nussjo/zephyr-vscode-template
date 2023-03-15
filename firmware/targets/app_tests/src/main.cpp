@@ -3,7 +3,7 @@
 #include <posix_board_if.h>
 #include <span>
 
-void main()
+int main()
 {
     // Arguments are passed like this
     // zephyr.elf <path> [<zephyr_arg1> <zephyr_arg2>] [-testargs] [<gtest_arg1> <gtest_arg2>]
@@ -38,4 +38,5 @@ void main()
     }
     const int exitCode = RUN_ALL_TESTS();
     posix_exit(exitCode);
+    return 0;
 }

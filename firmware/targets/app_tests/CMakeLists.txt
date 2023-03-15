@@ -11,14 +11,7 @@ target_sources(app
 
 target_link_libraries(app
     PRIVATE
-        $<$<BOOL:${CONFIG_FOO_COMPONENT_TESTS}>:Components::Foo>
+        $<$<BOOL:${CONFIG_FOO_COMPONENT_TESTS}>:Components::FooTests>
         GTest::gtest
         GTest::gmock
-)
-
-# run tests
-add_custom_target(run_tests
-    ${logical_target_for_zephyr_elf} -testargs -s --gtest_output=xml:${CMAKE_BINARY_DIR}/unittestTestResults/
-    DEPENDS ${logical_target_for_zephyr_elf}
-    BYPRODUCTS ${CMAKE_BINARY_DIR}/unittestTestResults/*.xml
 )

@@ -3,8 +3,6 @@
 # module options by going to Zephyr -> Modules in Kconfig.
 
 rsource "components/Kconfig"
-rsource "targets/app/src/Kconfig"
-rsource "targets/app_tests/src/Kconfig"
 
 config APP_GTEST
     bool "GoogleTest support"

@@ -43,7 +43,8 @@
                 "CONFIG_DEBUG": "y",
                 "CONFIG_DEBUG_INFO": "y",
                 "CONFIG_DEBUG_THREAD_INFO": "y",
-                "CONFIG_ASSERT": "y"
+                "CONFIG_ASSERT": "y",
+                "NO_BUILD_TYPE_WARNING": true
             }
         },
         {
@@ -93,10 +94,7 @@
         },
         {
             "name": "app_test_posix64_debug",
-            "configurePreset": "app_test_posix64_debug",
-            "targets": [
-                "run_tests"
-            ]
+            "configurePreset": "app_test_posix64_debug"
         }
     ]
 }

@@ -22,7 +22,7 @@ target_link_libraries(${PROJECT_NAME}
         zephyr_interface
 )
 
-if(${FOO_COMPONENT_TESTS})
+if(${CONFIG_FOO_COMPONENT_TESTS})
     add_subdirectory(tests)
     # enable tests to see detail headers
     target_include_directories(${PROJECT_NAME}Tests

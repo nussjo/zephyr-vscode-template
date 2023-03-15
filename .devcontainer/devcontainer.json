@@ -17,6 +17,7 @@
                 "ms-vscode.cpptools",
                 "ms-vscode.cmake-tools",
                 "matepek.vscode-catch2-test-adapter",
+                "nordic-semiconductor.nrf-kconfig",
                 "actboy168.tasks",
                 "eamodio.gitlens",
                 "twxs.cmake",

@@ -1,6 +1,6 @@
 #include <foo/hello.hpp>
 
-#include <sys/printk.h>
+#include <zephyr/sys/printk.h>
 
 namespace foo
 {

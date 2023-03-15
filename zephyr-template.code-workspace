@@ -52,7 +52,7 @@
         },
         "testMate.cpp.test.advancedExecutables": [
             {
-                "pattern": "**/{build}/**/tests/**/*{test,Test,TEST,tests,Tests,TESTS}",
+                "pattern": "**/{build}/**/app_tests/**/*{test,Test,TEST,tests,Tests,TESTS}",
                 "gtest": {
                     "debug.enableOutputColouring": true
                 },
