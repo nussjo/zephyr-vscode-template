@@ -1,3 +1,54 @@
+:toc:
+
 # VS Code Project Template For Zephyr Projects
 
 This project is a template that we use to work on Zephyr-based projects.
+
+## Prerequisites
+
+To use the setup you will need to install the following prerequisites:
+* VS Code
+* git
+* docker
+* WSL2 (on Windows)
+
+## Setup
+
+Clone the repository with
+
+`git clone https://github.com/nussjo/zephyr-vscode-template`
+
+From inside the root folder of the cloned repository, open VS code from
+the command line with
+
+`code .`
+
+Note: If you are on Windows/WSL2, make sure you clone the code inside
+your WSL2 as it is much better performance-wise.
+
+## Extensions
+
+VS Code needs to have the following extensions installed to work with the
+setup:
+
+* Docker
+* Dev Containers
+* WSL (on Windows)
+
+## Running VS Code inside your container
+
+To run VS Code insde the container, either click the green box at the
+bottom left and select the option `Reopen in Container` or alternatively
+open the command pallette with `ctrl+shift+p` and fuzzy-search for the
+`Reopen in Container` option.
+
+VS Code will then reload itself and pull the docker image specified
+inside the `.devcontainer/devcontainer.json` file. Instead of pulling
+an already built image you can also directly create one from file.
+
+Once the container is ready and VS Code has finished loading all the
+extensions you can now get started. Everything that you do happens
+inside the container.
+
+No more worries that you have to pollute your PC with random libraries,
+dependencies and tools that are only relevant for a specific project.
