@@ -7,6 +7,7 @@ This project is a template that we use to work on Zephyr-based projects.
 ## Prerequisites
 
 To use the setup you will need to install the following prerequisites:
+
 * VS Code
 * git
 * docker
@@ -16,12 +17,16 @@ To use the setup you will need to install the following prerequisites:
 
 Clone the repository with
 
-`git clone https://github.com/nussjo/zephyr-vscode-template`
+```bash
+git clone https://github.com/nussjo/zephyr-vscode-template
+```
 
 From inside the root folder of the cloned repository, open VS code from
 the command line with
 
-`code .`
+```bash
+code .
+```
 
 Note: If you are on Windows/WSL2, make sure you clone the code inside
 your WSL2 as it is much better performance-wise.
