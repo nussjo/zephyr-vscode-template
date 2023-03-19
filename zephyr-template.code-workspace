@@ -135,7 +135,7 @@
             },
             {
                 "label": "conan install",
-                "detail": "Install IMU conan packages",
+                "detail": "Install conan packages",
                 "type": "shell",
                 "command": "scripts/conan-install.sh",
                 "options": {
