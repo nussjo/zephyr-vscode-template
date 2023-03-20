@@ -79,7 +79,8 @@
                     ]
                 }
             }
-        ]
+        ],
+        "kconfig.python": "/usr/bin/python"
     },
     "tasks": {
         "version": "2.0.0",
