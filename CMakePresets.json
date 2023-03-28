@@ -8,7 +8,7 @@
             "generator": "Ninja",
             "binaryDir": "${sourceDir}/build/${presetName}",
             "cacheVariables": {
-                "BOARD": "native_posix_64",
+                "BOARD": "stm32f072_eval",
                 "CONFIG_STACK_USAGE": "y"
             },
             "environment": {
@@ -75,6 +75,7 @@
             "displayName": "App Tests (Debug)",
             "cacheVariables": {
                 "CMAKE_PREFIX_PATH": "${sourceDir}/conan-find/gtest",
+                "BOARD": "native_posix_64",
                 "APP_DIR": "app_tests"
             },
             "environment": {
